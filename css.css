@@ -226,7 +226,7 @@ html { font-size: clamp(14px, 1.6vw, 18px); }
 }
 
 /* Mobile: stack and ensure readable text */
-@media (max-width: 480px) {
+@media (max-width: 500px) {
     html { font-size: clamp(14px, 3.5vw, 16px); }
     /*#navbar { height: 7vw; padding: 4px 6px; }
     .logo { width: 38vw; border-radius: 8vw; }
