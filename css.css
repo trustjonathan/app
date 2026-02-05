@@ -142,7 +142,7 @@
 MOBILE FRIENDLY COLUMN: NOTES, VIDEOS, PAPERS  
 ---------------------------------------------*/
 /* VERY SMALL PHONES */
-@media (max-width: 360px) {
+/*@media (max-width: 360px) {
     .bio_cont .notes,
     .bio_cont .videos,
     .bio_cont .papers {
@@ -156,7 +156,7 @@ MOBILE FRIENDLY COLUMN: NOTES, VIDEOS, PAPERS
         max-height: 45vh;
         padding: 0.3rem;
     }
-}
+}*/
 
 
 .box2{
@@ -206,7 +206,6 @@ MOBILE FRIENDLY COLUMN: NOTES, VIDEOS, PAPERS
 #inline {
     display: flex;
 }
-/*...AI...*/
 
 /* Responsive typography and layout breakpoints
    - Keeps images rules unchanged (no direct image selector changes)
@@ -294,27 +293,27 @@ html { font-size: clamp(14px, 1.6vw, 18px); }
 
 
 /* VERY SMALL PHONES — <360px */
-@media (max-width: 360px) {
+/*@media (max-width: 360px) {
 
     .bio_cont .notes,
     .bio_cont .videos,
     .bio_cont .papers {
         max-width: 100%;             /* take almost full width */
-        padding: 0.8rem;             /* reduce padding slightly */
-        font-size: clamp(13px, 4vw, 16px); /* slightly smaller, still readable */
-    }
+       /* padding: 0.8rem;             /* reduce padding slightly */
+       /* font-size: clamp(13px, 4vw, 16px); /* slightly smaller, still readable */
+   /* }
 
     .bioNotes,
     .bioVideos,
     .bioPapers {
         max-height: 45vh;            /* shrink scroll area a bit */
-        padding: 0.3rem;
+   /*     padding: 0.3rem;
     }
 
     .box1 h3 {
         font-size: 8vw;              /* ensure hero text still fits */
-    }
-}
+  /*  }
+}*/
 
 
 
