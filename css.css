@@ -1,5 +1,6 @@
 #container {
     width: 100%;
+    height: auto;
 }
 
 #navbar {
@@ -145,7 +146,13 @@ MOBILE FRIENDLY COLUMN: NOTES, VIDEOS, PAPERS
     height: 20vw;
     display: flex;
     gap: 1vw;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 90%;
 }
+#music {
+    border-bottom-left-radius: 5vw;
+}
+
 #music img{
     height: 20vw;
     width: 20vw;
@@ -162,16 +169,13 @@ MOBILE FRIENDLY COLUMN: NOTES, VIDEOS, PAPERS
 #inline {
     display: flex;
     flex-direction: column;  /* stack vertically on small screens */
-    gap: 10rem;
+    gap: 5rem;
     width: 100%;
     padding: 1rem;
-    /*align-items: center;*/
 }
 #inline p {
     font-size: 4vw;
 }
-    font-size: 4vw;   /* larger font for readability on phones */
-    text-align: center;
 
 /* Responsive typography and layout breakpoints
    - Keeps images rules unchanged (no direct image selector changes)
