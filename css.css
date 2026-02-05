@@ -42,29 +42,35 @@
     font-weight: 700;
     margin-top: 0vm;
 }
+
+/* MOBILE DEFAULT - phones and small devices */
 .box1 {
     width: 100%;
-    height: 60vw;
-}
-.box1 img {
-    height: 60vw;
-     width: 100%;
-     opacity: 0.8;
-     position: absolute;
-     left: 0;
-     top: 1.5px;
-     padding-top: 5.2vw;
-     border-top-right-radius: 30vw;
-     border-bottom-left-radius: 30vw ;
-}
-.box1 h3 {
+    height: auto;           /* let height adjust based on content */
     position: relative;
-    top: 10vw;
-    color: #2b96ff;
-    z-index: 99;
-    font-size: 8vw;
+    padding-top: 2rem;      /* spacing for title above image */
 }
-#bio_cont{
+
+.box1 img {
+    width: 90%;             /* nearly full width */
+    height: auto;           /* keep aspect ratio */
+    display: block;
+    margin: 0 auto;         /* center image */
+    opacity: 0.8;
+    border-radius: 1rem;    /* small rounded corners for phones */
+}
+
+.box1 h3 {
+    font-size: clamp(18px, 6vw, 32px); /* readable font on phones */
+    color: #2b96ff;
+    text-align: center;
+    margin: 1rem 0;         /* spacing above & below title */
+    z-index: 10;
+    position: relative;
+}
+
+
+/*.bio_cont{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,7 +78,7 @@
     width: 100%;
 }
 
-#bio_cont .notes, .videos, .papers {
+.bio_cont .notes, .videos, .papers {
     width: 30%;
     border: 0px;
     background-color: white;
@@ -90,27 +96,95 @@
 .bioVideos::-webkit-scrollbar,
 .bioPapers::-webkit-scrollbar{
     display: none;
+}*/
+
+/* MOBILE-FIRST BASE */
+.bio_cont {
+    display: flex;
+    flex-direction: column;  /* stack vertically on small screens */
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+    align-items: center;
+    box-sizing: border-box;
 }
+
+.bio_cont .notes,
+.bio_cont .videos,
+.bio_cont .papers {
+    width: 100%;
+    max-width: 500px;   /* prevents stretching on larger phones */
+    padding: 1rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-size: clamp(14px, 4vw, 18px);
+    box-sizing: border-box;
+}
+
+.bioNotes,
+.bioVideos,
+.bioPapers {
+    width: 100%;
+    max-height: 50vh;
+    overflow-y: auto;
+    padding: 0.5rem;
+}
+
+/* Hide scrollbar in Chrome, Safari */
+.bioNotes::-webkit-scrollbar,
+.bioVideos::-webkit-scrollbar,
+.bioPapers::-webkit-scrollbar {
+    display: none;
+}
+
+/*--------------------------------------------
+MOBILE FRIENDLY COLUMN: NOTES, VIDEOS, PAPERS  
+---------------------------------------------*/
+/* VERY SMALL PHONES */
+@media (max-width: 360px) {
+    .bio_cont .notes,
+    .bio_cont .videos,
+    .bio_cont .papers {
+        max-width: 100%;
+        padding: 0.8rem;
+        font-size: clamp(13px, 4vw, 16px);
+    }
+    .bioNotes,
+    .bioVideos,
+    .bioPapers {
+        max-height: 45vh;
+        padding: 0.3rem;
+    }
+}
+
 
 .box2{
     width: 100%;
-    height: 50vw;
+    height: auto;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
     margin-top: 10px;
 }
 
+.box2 .subject_pics,
+.box2 .subject {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
 .subject_pics {
     width: 20vw;
     height: 20vw;
-    margin-left: 40%;
     border-radius: 10px;
 }
 .subject {
-    margin-left: 40%;
     margin-top: 2px;
     font-weight: 700;
 }
 
 #music, #grind {
+    margin-top: 1px;
     width: 50vw;
     height: 20vw;
     display: flex;
@@ -142,31 +216,56 @@
 html { font-size: clamp(14px, 1.6vw, 18px); }
 
 /* Large screens */
-@media (min-width: 1200px) {
-    #bio_cont { gap: 3vw; }
-    #bio_cont .bioNotes,
-    #bio_cont .bioVideos,
-    #bio_cont .bioPapers {
-        width: 28%;
-        max-width: 420px;
-        min-width: 220px;
-        max-height: 45vh;
+@media (min-width: 1000px) {
+    .box1 {
+    width: 100%;
+    height: 60vh;
+    background-color: red;
+    margin-top: 40px;
+    display: flex;
     }
-    .box2 { height: auto; display: flex; flex-wrap: wrap; gap: 1.5rem; }
+    .hex {
+        width: 50%;
+        height: 80%;
+        overflow: hidden;
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        margin-left: 20%;
+        border: 2px solid white;
+        }
+    .box1 img {
+        height: 100%;
+        width: 100%;
+        opacity: 0.8;
+        /*position: absolute;
+        left: 10%;
+        top: 10%;
+        padding-top: 1px;
+        border-top-right-radius: 50%;
+        border-bottom-left-radius: 10% ;*/
+        }
+    .box1 h3 {
+        position: relative;
+        top: 15%;
+        color: #2b96ff;
+        z-index: 99;
+        font-size: clamp(40px, 4vw, 50px);
+        mix-blend-mode: difference;
+        }
 }
 
+
 /* Medium screens (tablet / small laptop) */
-@media (max-width: 1199px) and (min-width: 601px) {
+@media (max-width: 1199px) and (min-width: 1000px) {
     html { font-size: clamp(15px, 1.8vw, 16px); }
-    #bio_cont {
+    .bio_cont {
         gap: 2.5vw;
         flex-wrap: wrap;
         align-items: flex-start;
         justify-content: center;
     }
-    #bio_cont .bioNotes,
-    #bio_cont .bioVideos,
-    #bio_cont .bioPapers {
+    .bio_cont .bioNotes,
+    .bio_cont .bioVideos,
+    .bio_cont .bioPapers {
         width: 32%;
         max-width: 360px;
         min-width: 200px;
@@ -175,70 +274,47 @@ html { font-size: clamp(14px, 1.6vw, 18px); }
         overflow-y: auto;
     }
     .box2 { height: auto; }
+
+
+    .bio_cont {
+        flex-direction: row;     /* side-by-side on tablet & PC */
+        justify-content: center;
+        gap: 3vw;
+    }
+    .bio_cont .notes,
+    .bio_cont .videos,
+    .bio_cont .papers {
+        width: 28%;              /* proportional widths for PC/tablet */
+        max-width: 420px;
+        min-width: 220px;
+        max-height: 45vh;
+    }
 }
 
-/* Mobile: stack and ensure readable text */
-@media (max-width: 600px) {
-    html { font-size: clamp(14px, 3.5vw, 16px); }
-    #bio_cont {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        padding: 1rem;
+
+
+/* VERY SMALL PHONES — <360px */
+@media (max-width: 360px) {
+
+    .bio_cont .notes,
+    .bio_cont .videos,
+    .bio_cont .papers {
+        max-width: 100%;             /* take almost full width */
+        padding: 0.8rem;             /* reduce padding slightly */
+        font-size: clamp(13px, 4vw, 16px); /* slightly smaller, still readable */
     }
-    #bio_cont .notes,
-    #bio_cont .videos,
-    #bio_cont .papers {
-        width: 100%;
-        max-width: 520px;
-        min-width: auto;
-        padding: 0.75rem;
-        box-sizing: border-box;
-        max-height: 60vh;
-        overflow-y: auto;
-        font-size: clamp(14px, 4vw, 18px);
-        background-color: white;
-    }
+
     .bioNotes,
     .bioVideos,
     .bioPapers {
-       width: 100%;
-       max-height: 55vh;
-       overflow-y: auto;
-       padding: 0.5rem;
-       scrollbar-width: none;
-       /*max-width: 520px;
-       min-width: auto;
-       box-sizing: border-box;
-       max-height: 60vh;
-       font-size: clamp(14px, 4vw, 18px);
-        background-color: white;*/
+        max-height: 45vh;            /* shrink scroll area a bit */
+        padding: 0.3rem;
     }
-    .bioNotes::-webkit-scrollbar,
-    .bioVideos::-webkit-scrollbar,
-    .bioPapers::-webkit-scrollbar {
-        display: none;
+
+    .box1 h3 {
+        font-size: 8vw;              /* ensure hero text still fits */
     }
-    .box2 {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 1rem;
-        padding: 0.5rem;
-        height: auto;
-    }
-    .subject_pics, .subject { margin-left: 40%; text-align: center; }
-    #music, #grind { width: 100%; height: auto; }
 }
 
-/* Very small devices */
-@media (max-width: 360px) {
-    html { font-size: 13px; }
-    #bio_cont .bioNotes,
-    #bio_cont .bioVideos,
-    #bio_cont .bioPapers { padding: 0.5rem; }
-    .box1 h3 { font-size: 9vw; }
-}
+
 
