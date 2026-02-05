@@ -90,7 +90,7 @@
     background-color: white;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    font-size: 4vw;
+    font-size: 4vw;   /* larger font for readability on phones */
     box-sizing: border-box;
 }
 
@@ -243,7 +243,7 @@ html { font-size: clamp(14px, 1.6vw, 18px); }
         max-width: 420px;
         min-width: 220px;
         max-height: 45vh;
-        /*font-size: clamp(16px, 4vw, 18px);*/
+        font-size: 1.5vw;   /* slightly smaller font on larger screens */
     }
 }
 
