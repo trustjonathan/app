@@ -85,7 +85,6 @@
         75% 100%, 25% 100%,     /* bottom right + bottom left */
         0% 50%                  /* left mid (sharp point) */
     );
-    border: 4px solid white;
 }
 
 .hex img {
@@ -94,6 +93,7 @@
     object-fit: cover;          /* ensures perfect fit inside hex */
     object-position: center;    /* centers the subject */
     opacity: 0.95;
+    
 }
 .box1 h3 {
         position: relative;
