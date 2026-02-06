@@ -1,0 +1,373 @@
+#container {
+    width: 100%;
+    height: auto;
+}
+
+#navbar {
+    display: flex;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5vw;
+    mix-blend-mode: difference;
+    padding: 3px 1px 0px 3px;
+}
+.home {
+    margin-left: 70%;
+}
+.home p {
+    font-size: 1.6rem;
+    font-weight: bolder;
+}
+
+.logo {
+    border: 1px solid black;
+    background-color: #2b96ff;
+    border-radius: 10vw;
+    display: flex;
+    width: 23vw;
+    align-items: center;
+    cursor: wait;
+}
+.logo img{
+    height: 5vw;
+    width: 5vw;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 40vw;
+    z-index: 10;
+    color: #2b96ff;
+}
+.logo:hover .dropdown-content {
+    display: block;
+}
+#navbar h7{
+    color: black;
+    font-size: 3vw;
+    font-weight: 700;
+    margin-top: 0vm;
+}
+
+.box1 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 80px 20px;
+    animation: bgMove 8s infinite alternate;
+    background: linear-gradient(45deg, #ff4e50, #fc913a, #1cb5e0, #000046);
+    background-size: 300% 300%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: right;
+    gap: 20%;
+
+    /* add this */
+    clip-path: polygon(
+        0 0,        /* top-left */
+        85% 0,      /* top straight part */
+        100% 50%,   /* angled right tip */
+        85% 100%,   /* bottom straight part */
+        0 100%      /* bottom-left */
+    );
+    }
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%;}
+  100% { background-position: 100% 50%;}
+}
+
+.hex {
+    width: 45vw;                /* responsive width */
+    height: 45vw;               /* keeps hexagon proportional */
+    max-height: 60vh;
+    max-width: 60vh;
+
+    overflow: hidden;
+    clip-path: polygon(
+        25% 0%, 75% 0%,         /* top left + top right */
+        100% 50%,               /* right mid (sharp point) */
+        75% 100%, 25% 100%,     /* bottom right + bottom left */
+        0% 50%                  /* left mid (sharp point) */
+    );
+}
+
+.hex img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* ensures perfect fit inside hex */
+    object-position: center;    /* centers the subject */
+    opacity: 0.95;
+    
+}
+.box1 h3 {
+        position: relative;
+        top: 25%;
+        color: #2b96ff;
+        z-index: 99;
+        font-size: clamp(40px, 4vw, 50px);
+        mix-blend-mode: difference;
+        }
+
+/* MOBILE DEFAULT - phones and small devices */
+/*.box1 {
+    width: 100%;
+    height: auto;
+    background-color: red;
+    margin-top: 40px;
+    display: flex;
+
+    }
+    .hex {
+        width: 50%;
+        height: 50%;
+        overflow: hidden;
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        margin-left: 20%;
+        border: 2px solid white;
+        }
+   /* .box1 img {
+        height: 100%;
+        width: 100%;
+        opacity: 0.8;
+        /*position: absolute;
+        left: 10%;
+        top: 10%;
+        padding-top: 1px;
+        border-top-right-radius: 50%;
+        border-bottom-left-radius: 10% ;*/
+       /* }
+    
+/*--------------------------------------------
+MOBILE FRIENDLY COLUMN: NOTES, VIDEOS, PAPERS  
+---------------------------------------------*/
+
+
+.box2{
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    margin-top: 10px;
+}
+
+.box2 .subject_pics,
+.box2 .subject {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+.subject_pics {
+    width: 20vw;
+    height: 20vw;
+    border-radius: 10px;
+}
+.subject {
+    margin-top: 2px;
+    font-weight: 700;
+}
+
+/* MOBILE-FIRST BASE */
+.bio_cont {
+    display: flex;
+    flex-direction: column;  /* stack vertically on small screens */
+    gap: 5rem;
+    width: 100%;
+    padding: 1rem;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.bio_cont .notes,
+.bio_cont .videos,
+.bio_cont .papers {
+    width: 100%;
+    max-width: 900px;   /* prevents stretching on larger phones */
+    padding: 1rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-size: 4vw;   /* larger font for readability on phones */
+    box-sizing: border-box;
+}
+
+.bioNotes,
+.bioVideos,
+.bioPapers {
+    width: 100%;
+    max-height: 50vh;
+    overflow-y: auto;
+    padding: 0.5rem;
+}
+
+/* Hide scrollbar in Chrome, Safari */
+.bioNotes::-webkit-scrollbar,
+.bioVideos::-webkit-scrollbar,
+.bioPapers::-webkit-scrollbar {
+    display: none;
+}
+
+
+#music, #grind {
+    margin-top: 1px;
+    height: auto;
+    display: flex;
+    gap: 1vw;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 90%;
+}
+#music {
+    border-bottom-left-radius: 5vw;
+}
+
+#music img{
+    height: 22vw;
+    width: 20vw;
+    border-top-right-radius: 5vw;
+    border-bottom-left-radius: 5vw;
+}
+
+#grind img{
+    height: 22vw;
+    width: 20vw;
+    opacity: 1;
+}
+
+#inline {
+    display: flex;
+    flex-direction: column;  /* stack vertically on small screens */
+    gap: 5rem;
+    width: 100%;
+    padding: 1rem;
+}
+#inline p {
+    font-size: 4vw;
+}
+
+/* Responsive typography and layout breakpoints
+   - Keeps images rules unchanged (no direct image selector changes)
+   - Ensures readable fonts on small screens using clamp()
+*/
+:root { font-size: 16px; }
+html { font-size: clamp(14px, 1.6vw, 18px); }
+
+/* Large screens */
+@media (min-width: 1000px) {
+    .box1 {
+    width: 100%;
+    height: auto;
+    background-color: red;
+    margin-top: 40px;
+    display: flex;
+    }
+    .hex {
+        width: 50%;
+        height: auto;
+        overflow: hidden;
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        margin-left: 20%;
+        border: 2px solid white;
+        }
+    .box1 img {
+        height: 100%;
+        width: 100%;
+        opacity: 0.8;
+        /*position: absolute;
+        left: 10%;
+        top: 10%;
+        padding-top: 1px;
+        border-top-right-radius: 50%;
+        border-bottom-left-radius: 10% ;*/
+        }
+    .box1 h3 {
+        position: relative;
+        top: 15%;
+        color: #2b96ff;
+        z-index: 99;
+        font-size: clamp(40px, 4vw, 50px);
+        mix-blend-mode: difference;
+        }
+}
+
+
+/* Medium screens (tablet / small laptop) */
+@media (max-width: 1199px) and (min-width: 1000px) {
+    html { font-size: clamp(15px, 1.8vw, 16px); }
+    .bio_cont {
+        gap: 2.5vw;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .bio_cont .bioNotes,
+    .bio_cont .bioVideos,
+    .bio_cont .bioPapers {
+        width: 32%;
+        max-width: 360px;
+        min-width: 200px;
+        box-sizing: border-box;
+        max-height: 50vh;
+        overflow-y: auto;
+    }
+    .box2 { height: auto; }
+
+
+    .bio_cont {
+        flex-direction: row;     /* side-by-side on tablet & PC */
+        justify-content: center;
+        gap: 3vw;
+    }
+    .bio_cont .notes,
+    .bio_cont .videos,
+    .bio_cont .papers {
+        width: 28%;              /* proportional widths for PC/tablet */
+        max-width: 420px;
+        min-width: 220px;
+        max-height: 45vh;
+        font-size: 1.5vw;   /* slightly smaller font on larger screens */
+    }
+    #inline {
+    display: flex;
+    }
+    #music, #grind {
+    margin-top: 1px;
+    width: 50vw;
+    height: 20vw;
+    display: flex;
+    gap: 1vw;
+    }
+    #inline p {
+    font-size: 2vw;
+}
+}
+
+
+
+/* VERY SMALL PHONES — <360px */
+/*@media (max-width: 360px) {
+
+    .bio_cont .notes,
+    .bio_cont .videos,
+    .bio_cont .papers {
+        max-width: 100%;             /* take almost full width */
+       /* padding: 0.8rem;             /* reduce padding slightly */
+       /* font-size: clamp(13px, 4vw, 16px); /* slightly smaller, still readable */
+   /* }
+
+    .bioNotes,
+    .bioVideos,
+    .bioPapers {
+        max-height: 45vh;            /* shrink scroll area a bit */
+   /*     padding: 0.3rem;
+    }
+
+    .box1 h3 {
+        font-size: 8vw;              /* ensure hero text still fits */
+  /*  }
+}*/
+
+
+
