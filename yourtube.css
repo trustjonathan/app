@@ -1,5 +1,6 @@
 .main-box .h1 {
   color: #1cb5e0;
+  margin-left: 5rem;
 }
 .main-box {
   display: flex;
@@ -9,6 +10,7 @@
     width: 100%;
   gap: 10px;
   height: auto;
+  margin-top: 5rem;
 }
 .main-box .iframe {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
