@@ -1,0 +1,29 @@
+.main-box .h1 {
+  color: #1cb5e0;
+}
+.main-box {
+  display: flex;
+  flex-direction: column;
+    /* stack vertically on small screens */
+    gap: 5rem;
+    width: 100%;
+  gap: 10px;
+  height: auto;
+}
+.main-box .iframe {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin: 2%;
+  height: 15vh;
+
+}
+.biology,
+.chemistry,
+.mathematics {
+  padding: 5%;
+  margin-bottom: 5rem;
+}
+#inline {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10%;
+}
