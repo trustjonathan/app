@@ -13,12 +13,20 @@
     mix-blend-mode: difference;
     padding: 3px 1px 0px 3px;
 }
+
 .home {
     margin-left: 70%;
 }
 .home p {
     font-size: 1.6rem;
     font-weight: bolder;
+}
+/*..........................
+displays a drop down menu
+..........................*/
+.display { color: #e6e6e6;}
+.dropdown-panel .display-clone {
+    line-height: 1.6;
 }
 
 .logo {
