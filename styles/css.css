@@ -62,7 +62,7 @@ displays a drop down menu
 
 .box1 {
     position: relative;
-    width: 100%;
+    width: 80%;
     height: auto;
     padding: 80px 20px;
     animation: bgMove 8s infinite alternate;
@@ -72,15 +72,10 @@ displays a drop down menu
     display: flex;
     justify-content: right;
     gap: 20%;
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
 
-    /* add this */
-    clip-path: polygon(
-        0 0,        /* top-left */
-        85% 0,      /* top straight part */
-        100% 50%,   /* angled right tip */
-        85% 100%,   /* bottom straight part */
-        0 100%      /* bottom-left */
-    );
+    
     }
 
 @keyframes bgMove {
@@ -119,39 +114,6 @@ displays a drop down menu
         font-size: clamp(40px, 4vw, 50px);
         mix-blend-mode: difference;
         }
-
-/* MOBILE DEFAULT - phones and small devices */
-/*.box1 {
-    width: 100%;
-    height: auto;
-    background-color: red;
-    margin-top: 40px;
-    display: flex;
-
-    }
-    .hex {
-        width: 50%;
-        height: 50%;
-        overflow: hidden;
-        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-        margin-left: 20%;
-        border: 2px solid white;
-        }
-   /* .box1 img {
-        height: 100%;
-        width: 100%;
-        opacity: 0.8;
-        /*position: absolute;
-        left: 10%;
-        top: 10%;
-        padding-top: 1px;
-        border-top-right-radius: 50%;
-        border-bottom-left-radius: 10% ;*/
-       /* }
-    
-/*--------------------------------------------
-MOBILE FRIENDLY COLUMN: NOTES, VIDEOS, PAPERS  
----------------------------------------------*/
 
 
 .box2{
